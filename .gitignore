@@ -1,0 +1,12 @@
+# dependencies
+node_modules/
+
+# logs
+pnpm-lock.yaml*
+pnpm-debug.log*
+
+# environment variables
+.env
+
+# macOS-specific files
+.DS_Store
