@@ -1,0 +1,31 @@
+{
+	"name": "contact",
+	"version": "1.0.0",
+	"description": "A system that allows managing a Contact Book",
+	"scripts": {
+		"format": "prettier --config -c \".prettierrc\" -u --no-editorconfig -w \"**/**/**.{ts,tsx}\" --ignore-path \".gitignore\"",
+		"lint": "eslint -c \".eslintrc.json\" --fix \"**/**/*.{ts,tsx}\" --color"
+	},
+	"devDependencies": {
+		"eslint": "8.35.0",
+		"eslint-config-prettier": "8.6.0",
+		"eslint-plugin-prettier": "4.2.1",
+		"eslint-scope": "7.1.1",
+		"@typescript-eslint/eslint-plugin": "^5.0.0",
+		"@typescript-eslint/parser": "^5.0.0",
+		"eslint-utils": "3.0.0",
+		"eslint-visitor-keys": "3.3.0",
+		"prettier": "2.8.4",
+		"prettier-linter-helpers": "1.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Jau2002/Contact.git"
+	},
+	"author": "Jau2002 <idamendjaume@gmail.com> (https://www.linkedin.com/in/jaumesuarez)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Jau2002/Contact/issues"
+	},
+	"homepage": "https://github.com/Jau2002/Contact#readme"
+}
