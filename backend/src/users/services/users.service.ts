@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import type { DeleteResult, Repository } from 'typeorm';
-import type CreateUserDto from '../create-user.dto';
+import type { DeleteResult, Repository, UpdateResult } from 'typeorm';
+import type CreateUserDto from '../dto/create-user.dto';
 import User from '../user.entity';
 
 @Injectable()
@@ -21,5 +21,9 @@ export default class UsersService {
 
 	removeUser(id: number): Promise<DeleteResult> {
 		return this.userRepository.delete({ id });
+	}
+
+	updateUser(id: number, user: User): Promise<UpdateResult> {
+		return this.userRepository.update({ id }, user);
 	}
 }

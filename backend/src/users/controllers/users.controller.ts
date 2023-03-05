@@ -6,9 +6,11 @@ import {
 	Param,
 	ParseIntPipe,
 	Post,
+	Put,
 } from '@nestjs/common';
-import type { DeleteResult } from 'typeorm';
-import type CreateUserDto from '../create-user.dto';
+import type { DeleteResult, UpdateResult } from 'typeorm';
+import type CreateUserDto from '../dto/create-user.dto';
+import UpdateUserDto from '../dto/update.user.dto';
 import UsersService from '../services/users.service';
 
 @Controller('users')
@@ -28,5 +30,13 @@ export default class UsersController {
 	@Delete(':id')
 	deleteUser(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
 		return this.userService.removeUser(id);
+	}
+
+	@Put(':id')
+	updateUser(
+		@Param('id', ParseIntPipe) id: number,
+		@Body() user: UpdateUserDto
+	): Promise<UpdateResult> {
+		return this.userService.updateUser(id, user);
 	}
 }
