@@ -3,6 +3,7 @@ import {
 	Controller,
 	Delete,
 	Get,
+	HttpException,
 	Param,
 	ParseIntPipe,
 	Post,
@@ -12,13 +13,14 @@ import type { DeleteResult, UpdateResult } from 'typeorm';
 import type CreateUserDto from '../dto/create-user.dto';
 import UpdateUserDto from '../dto/update.user.dto';
 import UsersService from '../services/users.service';
+import User from '../user.entity';
 
 @Controller('users')
 export default class UsersController {
 	constructor(private userService: UsersService) {}
 
 	@Post()
-	createUser(@Body() newUser: CreateUserDto): Promise<CreateUserDto> {
+	createUser(@Body() newUser: CreateUserDto): Promise<User | HttpException> {
 		return this.userService.createUser(newUser);
 	}
 
@@ -28,7 +30,9 @@ export default class UsersController {
 	}
 
 	@Delete(':id')
-	deleteUser(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
+	deleteUser(
+		@Param('id', ParseIntPipe) id: number
+	): Promise<HttpException | DeleteResult> {
 		return this.userService.removeUser(id);
 	}
 
@@ -36,7 +40,7 @@ export default class UsersController {
 	updateUser(
 		@Param('id', ParseIntPipe) id: number,
 		@Body() user: UpdateUserDto
-	): Promise<UpdateResult> {
+	): Promise<HttpException | UpdateResult> {
 		return this.userService.updateUser(id, user);
 	}
 }
