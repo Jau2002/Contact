@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import type { DeleteResult } from 'typeorm';
 import type CreateUserDto from '../create-user.dto';
 import UsersService from '../services/users.service';
 
@@ -14,5 +15,10 @@ export default class UsersController {
 	@Get()
 	getAllUsers(): Promise<CreateUserDto[]> {
 		return this.userService.searchAll();
+	}
+
+	@Delete(':id')
+	deleteUser(@Param('id') id: number): Promise<DeleteResult> {
+		return this.userService.removeUser(id);
 	}
 }

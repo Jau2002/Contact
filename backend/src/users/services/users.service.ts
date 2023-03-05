@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import type { Repository } from 'typeorm';
+import type { DeleteResult, Repository } from 'typeorm';
 import type CreateUserDto from '../create-user.dto';
 import User from '../user.entity';
 
@@ -17,5 +17,9 @@ export default class UsersService {
 
 	searchAll(): Promise<User[]> {
 		return this.userRepository.find({ order: { names: 'ASC' } });
+	}
+
+	removeUser(id: number): Promise<DeleteResult> {
+		return this.userRepository.delete({ id });
 	}
 }
