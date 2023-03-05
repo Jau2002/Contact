@@ -1,6 +1,9 @@
 # dependencies
 node_modules/
+
+#Bundle
 dist/
+build/
 
 # logs
 pnpm-lock.yaml*

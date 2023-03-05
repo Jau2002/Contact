@@ -13,7 +13,8 @@
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"project": [
-      "./backend/tsconfig.json"
+      "./backend/tsconfig.json",
+			"./frontend/tsconfig.json"
     ],
 		"sourceType": "module"
 	},
