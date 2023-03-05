@@ -14,4 +14,8 @@ export default class UsersService {
 		const newUser: User = this.userRepository.create(user);
 		return this.userRepository.save(newUser);
 	}
+
+	searchAll(): Promise<User[]> {
+		return this.userRepository.find({ order: { names: 'ASC' } });
+	}
 }
