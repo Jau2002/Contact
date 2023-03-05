@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+	Body,
+	Controller,
+	Delete,
+	Get,
+	Param,
+	ParseIntPipe,
+	Post,
+} from '@nestjs/common';
 import type { DeleteResult } from 'typeorm';
 import type CreateUserDto from '../create-user.dto';
 import UsersService from '../services/users.service';
@@ -18,7 +26,7 @@ export default class UsersController {
 	}
 
 	@Delete(':id')
-	deleteUser(@Param('id') id: number): Promise<DeleteResult> {
+	deleteUser(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
 		return this.userService.removeUser(id);
 	}
 }
