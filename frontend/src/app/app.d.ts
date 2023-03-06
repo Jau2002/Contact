@@ -1,8 +1,11 @@
 import type { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import type { TypedUseSelectorHook } from 'react-redux';
+import type { UserState } from '../features/users/user';
 import store from './store';
 
-interface Store {}
+interface Store {
+	users: UserState;
+}
 
 type StoreReducers = ToolkitStore<Store>;
 
