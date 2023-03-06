@@ -23,7 +23,7 @@ Before using this application, make sure you have the following prerequisites in
 
 - [Node.js](https://nodejs.org/en/download/): This is a JavaScript _runtime environment_ that is required to run the application. Follow the instructions on the official Node.js website to download and install the latest version for your operating system.
 
-> WARNING: **Node.js 16** or higher is required | **NPM 8** or higher is required
+> WARNING: **Node.js 16** or higher is required | **NPM 8** or higher is required |
 
 - [PostgreSQL](https://www.postgresql.org/download/): This is an open-source _relational database management system_ that is required to store and manage the data for the application. Follow the instructions on the official **PostgreSQL** website to download and install the latest version for your operating system.
 
@@ -34,6 +34,8 @@ Before using this application, make sure you have the following prerequisites in
 ```bash
 npm install -g pnpm
 ```
+
+> WARNING: **PNPM 6** or higher is required
 
 Once you have installed all of the mandatory prerequisites and optionally installed _PNPM_, you are ready to use the application.
 
