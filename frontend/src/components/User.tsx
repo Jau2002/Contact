@@ -6,7 +6,7 @@ function User(): ReactElement {
 	const { users } = useContact();
 	return (
 		<>
-			{users.map(
+			{users?.map(
 				({
 					id,
 					names,

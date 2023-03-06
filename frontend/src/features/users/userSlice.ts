@@ -20,12 +20,15 @@ const UserSlice: UserSlice = createSlice({
 			...state,
 			user: payload,
 		}),
+		postUser: (state: any, {}: UserPayload): UserState => ({
+			...state,
+		}),
 	},
 });
 
 export const selectUser: SelectorUser = (state: RootState): UserAction[] =>
 	state.users.user;
 
-export const { getAllUsers } = UserSlice.actions;
+export const { getAllUsers, postUser } = UserSlice.actions;
 
 export default UserSlice.reducer;

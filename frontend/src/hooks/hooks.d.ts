@@ -26,9 +26,11 @@ interface FormsAssociation {
 	form: Attributes[];
 }
 
+type HandleSubmit = (body: Inputs) => void;
+
 interface UseSubmit {
 	defaultInputs: Inputs;
-	handleSubmit;
+	handleSubmit: HandleSubmit;
 }
 
 type DispatchUser = Dispatch<any>;

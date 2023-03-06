@@ -1,15 +1,16 @@
-import { Dispatch } from '@reduxjs/toolkit';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../app/hook';
-import type { Inputs, UseSubmit } from './hooks';
+import { createUser } from '../features/users/userAction';
+import type { DispatchUser, HandleSubmit, Inputs, UseSubmit } from './hooks';
 
 function useSubmit(): UseSubmit {
-	const dispatch: Dispatch<any> = useAppDispatch();
+	const dispatch: DispatchUser = useAppDispatch();
 
 	const navigate: NavigateFunction = useNavigate();
 
-	const handleSubmit = ({}) => {
-		return navigate('/');
+	const handleSubmit: HandleSubmit = (user: Inputs) => {
+		dispatch(createUser(user));
+		navigate('/');
 	};
 
 	const defaultInputs: Inputs = {

@@ -28,11 +28,11 @@ function validator({
 
 	if (!cellPhone) {
 		errors.cellPhone = 'Por favor ingrese numero';
-	} else if (!/^(\+\d{1,3}[- ]?)?\d{10}$/.test(String(cellPhone))) {
+	} else if (!/^\d{10}$/.test(String(cellPhone))) {
 		errors.cellPhone = 'Por favor ingrese ingrese su prefijo y número';
 	}
 
-	if (phone && !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(String(phone))) {
+	if (phone && !/^\d{10}$/.test(String(phone))) {
 		errors.phone = 'Por favor ingrese ingrese su prefijo y número';
 	}
 	return errors;

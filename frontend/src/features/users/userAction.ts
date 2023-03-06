@@ -1,15 +1,27 @@
 import type { Dispatch } from '@reduxjs/toolkit';
-import type { GetUsers, getUsersAction, UserAction } from './user';
-import { getAllUsers } from './userSlice';
+import axios from 'axios';
+import type { Create, CreateUser, GetUsers, getUsersAction } from './user';
+import { getAllUsers, postUser } from './userSlice';
 
-const DefaultURL = 'http://localhost:3001';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 export function getUsers(): getUsersAction {
 	return async (dispatch: Dispatch): GetUsers => {
-		const res: Response = await window.fetch(`${DefaultURL}/users`);
+		const { data } = await axios.get('/users');
 		try {
-			const data: Promise<UserAction[]> = await res.json();
 			return dispatch(getAllUsers(data));
+		} catch (err) {
+			throw new Error((err as Error).message);
+		}
+	};
+}
+
+export function createUser(user: object): CreateUser {
+	return async (dispatch: Dispatch): Create => {
+		const { data } = await axios.post('/users', user);
+		console.log(data);
+		try {
+			return dispatch(postUser(data));
 		} catch (err) {
 			throw new Error((err as Error).message);
 		}

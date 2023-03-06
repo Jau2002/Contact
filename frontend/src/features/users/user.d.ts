@@ -29,3 +29,7 @@ interface DispatchUser {
 type GetUsers = Promise<DispatchUser>;
 
 type getUsersAction = (dispatch: Dispatch) => GetUsers;
+
+type Create = Promise<DispatchUser>;
+
+type CreateUser = (dispatch: Dispatch) => Create;
