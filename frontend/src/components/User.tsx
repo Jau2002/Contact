@@ -4,7 +4,6 @@ import useContact from '../hooks/useContact';
 
 function User(): ReactElement {
 	const { users } = useContact();
-	console.log(users);
 	return (
 		<>
 			{users.map(
