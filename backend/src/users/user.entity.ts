@@ -14,11 +14,11 @@ export default class User {
 	@Column({ nullable: true, type: 'varchar' })
 	email: string;
 
-	@Column({ nullable: true, type: 'int' })
-	phone: number;
+	@Column({ nullable: true, type: 'varchar' })
+	phone: string;
 
-	@Column({ unique: true, type: 'int' })
-	cellPhone: number;
+	@Column({ unique: true, type: 'varchar' })
+	cellPhone: string;
 
 	@Column({ nullable: true, type: 'varchar' })
 	address: string;

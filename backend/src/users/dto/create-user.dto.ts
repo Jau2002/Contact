@@ -3,7 +3,7 @@ export default class CreateUserDto {
 	names: string;
 	lastNames?: string;
 	email?: string;
-	phone?: number;
-	cellPhone: number;
+	phone?: string;
+	cellPhone: string;
 	address?: string;
 }

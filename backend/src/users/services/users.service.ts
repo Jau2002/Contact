@@ -12,14 +12,18 @@ export default class UsersService {
 
 	async createUser(user: CreateUserDto): Promise<User | HttpException> {
 		const userFound: User = await this.userRepository.findOne({
-			where: { phone: user.phone },
+			where: { cellPhone: user.cellPhone },
 		});
 
 		if (userFound) {
 			return new HttpException(
-				`the ${userFound.names}'s phone number already exists`,
+				'the user´s phone number already exists',
 				HttpStatus.CONFLICT
 			);
+		}
+
+		if (!user.names) {
+			return new HttpException('Name cannot be null', HttpStatus.CONFLICT);
 		}
 
 		const newUser: User = this.userRepository.create(user);
