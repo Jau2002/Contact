@@ -12,7 +12,7 @@ function useSubmit(): UseSubmit {
 		dispatch(createUser(user));
 		setTimeout(() => {
 			navigate('/');
-		}, 3000);
+		}, 2000);
 	};
 
 	const defaultInputs: Inputs = {

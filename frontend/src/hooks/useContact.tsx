@@ -10,7 +10,7 @@ function useContact(): UseContact {
 
 	useEffect(() => {
 		dispatch(getUsers());
-	}, [dispatch]);
+	});
 
 	const users: UserAction[] = useAppSelector(selectUser);
 
