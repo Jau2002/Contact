@@ -33,3 +33,7 @@ type getUsersAction = (dispatch: Dispatch) => GetUsers;
 type Create = Promise<DispatchUser>;
 
 type CreateUser = (dispatch: Dispatch) => Create;
+
+type Remove = Promise<DispatchUser>;
+
+type RemoveUser = (dispatch: Dispatch) => Remove;

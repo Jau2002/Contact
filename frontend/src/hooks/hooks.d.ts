@@ -34,3 +34,13 @@ interface UseSubmit {
 }
 
 type DispatchUser = Dispatch<any>;
+
+type HandleOnClick = (id: number) => void;
+
+interface UseRemove {
+	handleOnClick: HandleOnClick;
+}
+
+interface DeleteUser {
+	id: number;
+}

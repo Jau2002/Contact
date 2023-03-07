@@ -10,7 +10,9 @@ function useSubmit(): UseSubmit {
 
 	const handleSubmit: HandleSubmit = (user: Inputs) => {
 		dispatch(createUser(user));
-		navigate('/');
+		setTimeout(() => {
+			navigate('/');
+		}, 3000);
 	};
 
 	const defaultInputs: Inputs = {
