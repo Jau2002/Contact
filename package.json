@@ -10,12 +10,10 @@
 		"backend",
 		"frontend"
 	],
-	"volta": {
-		"node": ">=16.19.0"
-	},
 	"engines": {
 		"node": ">=16",
-		"npm": ">=8"
+		"npm": ">=8",
+		"pnpm": ">=6"
 	},
 	"devDependencies": {
 		"eslint": "8.35.0",

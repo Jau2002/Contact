@@ -5,7 +5,7 @@ import useContact from '../hooks/useContact';
 function User(): ReactElement {
 	const { users } = useContact();
 	return (
-		<>
+		<section className='user--section'>
 			{users?.map(
 				({
 					id,
@@ -16,17 +16,20 @@ function User(): ReactElement {
 					email,
 					address,
 				}: UserAction): ReactElement => (
-					<div key={id}>
-						<h2>{names}</h2>
-						{lastNames && <h3>{lastNames}</h3>}
-						<p>{cellPhone}</p>
-						{phone && <p>{phone}</p>}
-						{email && <samp>{email}</samp>}
-						{address && <samp>{address}</samp>}
+					<div
+						key={id}
+						className='card-body user--div'
+					>
+						<h2 className='card-title user--h2'>{names}</h2>
+						{lastNames && <h3 className='user--p'>{lastNames}</h3>}
+						<p className='card-subtitle mb-2 text-muted user--p'>{cellPhone}</p>
+						{phone && <p className='card-subtitle mb-2 text-muted'>{phone}</p>}
+						{email && <samp className='card-text user--p'>{email}</samp>}
+						{address && <samp className='user--p'>{address}</samp>}
 					</div>
 				)
 			)}
-		</>
+		</section>
 	);
 }
 

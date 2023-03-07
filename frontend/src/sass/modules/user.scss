@@ -1,0 +1,23 @@
+.user {
+	&--section {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+		grid-template-rows: 150px;
+		grid-gap: 2rem;
+		margin: 1.5rem;
+	}
+
+	&--div {
+		background: $dark-graysish;
+		padding: 1.2rem;
+		border-radius: 10px;
+	}
+
+	&--h2 {
+		font: 700 1.5em $font;
+	}
+
+	&--p {
+		font: 1em $font;
+	}
+}
