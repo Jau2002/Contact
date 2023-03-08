@@ -13,28 +13,29 @@ function validator({
 		email &&
 		!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(String(email))
 	) {
-		errors.email = 'Por favor ingrese un formato del correo valido';
+		errors.email = 'Please enter a valid email format';
 	}
 
 	if (!names) {
-		errors.names = 'Por favor ingrese al menos un nombre';
+		errors.names = 'Please enter at least one name';
 	} else if (!/^[A-Za-z\s]+$/g.test(String(names))) {
-		errors.names = 'Por favor borre números o símbolos';
+		errors.names = 'Please delete numbers or symbols';
 	}
 
 	if (lastNames && !/^[A-Za-z\s]+$/g.test(String(lastNames))) {
-		errors.lastNames = 'Por favor borre números o símbolos';
+		errors.lastNames = 'Please delete numbers or symbols';
 	}
 
 	if (!cellPhone) {
-		errors.cellPhone = 'Por favor ingrese numero';
+		errors.cellPhone = 'Please enter number';
 	} else if (!/^\d{10}$/.test(String(cellPhone))) {
-		errors.cellPhone = 'Por favor ingrese ingrese su prefijo y número';
+		errors.cellPhone = 'Please enter only numbers';
 	}
 
 	if (phone && !/^\d{10}$/.test(String(phone))) {
-		errors.phone = 'Por favor ingrese ingrese su prefijo y número';
+		errors.phone = 'Please enter only numbers';
 	}
+
 	return errors;
 }
 

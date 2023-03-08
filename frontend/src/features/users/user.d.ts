@@ -1,5 +1,5 @@
-import { PayloadAction, Slice } from '@reduxjs/toolkit';
-import { RootState } from '../app/app';
+import type { PayloadAction, Slice } from '@reduxjs/toolkit';
+import type { RootState } from '../app/app';
 
 interface UserState {
 	user: [];
@@ -37,3 +37,7 @@ type CreateUser = (dispatch: Dispatch) => Create;
 type Remove = Promise<DispatchUser>;
 
 type RemoveUser = (dispatch: Dispatch) => Remove;
+
+type Update = Promise<DispatchUser>;
+
+type UpdateUser = (dispatch: Dispatch) => Update;

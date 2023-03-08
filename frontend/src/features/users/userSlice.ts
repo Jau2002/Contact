@@ -23,7 +23,10 @@ const UserSlice: UserSlice = createSlice({
 		postUser: (state: any, {}: UserPayload): UserState => ({
 			...state,
 		}),
-		deleteUser: (state: any, {}: UserPayload) => ({
+		deleteUser: (state: any, {}: UserPayload): UserState => ({
+			...state,
+		}),
+		putUser: (state: any, {}: UserPayload): UserState => ({
 			...state,
 		}),
 	},
@@ -32,6 +35,6 @@ const UserSlice: UserSlice = createSlice({
 export const selectUser: SelectorUser = (state: RootState): UserAction[] =>
 	state.users.user;
 
-export const { getAllUsers, postUser, deleteUser } = UserSlice.actions;
+export const { getAllUsers, postUser, deleteUser, putUser } = UserSlice.actions;
 
 export default UserSlice.reducer;

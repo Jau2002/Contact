@@ -1,5 +1,5 @@
 import type { Dispatch } from '@reduxjs/toolkit';
-import type { UserAction } from '../features/users/user';
+import type { RemoveUser, UserAction } from '../features/users/user';
 import type { Attributes } from '../utils/utils';
 
 interface UseContact {
@@ -35,7 +35,7 @@ interface UseSubmit {
 
 type DispatchUser = Dispatch<any>;
 
-type HandleOnClick = (id: number) => void;
+type HandleOnClick = (id: number) => RemoveUser;
 
 interface UseRemove {
 	handleOnClick: HandleOnClick;
@@ -43,4 +43,10 @@ interface UseRemove {
 
 interface DeleteUser {
 	id: number;
+}
+
+type HandleOnSubmit = () => void;
+
+interface UseUpdate {
+	handleOnSubmit: HandleOnSubmit;
 }
